@@ -32,7 +32,7 @@ The application supports multiple users, with all user data stored in a single S
 
 ### Prerequisites
 
-* JDK 21 (or the version used for this project)
+* JDK 11 or later
 * Maven
 
 ### Clone the repository
