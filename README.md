@@ -47,12 +47,7 @@ cd <repository-name>
 ```bash
 mvn clean package
 ```
-
-### Run
-
-```bash
-mvn javafx:run
-```
+This creates a runnable JAR in the `target` directory.
 
 ## Security
 
@@ -62,6 +57,7 @@ This application is designed with local security in mind.
 * Encryption keys are derived from the user's master password using Argon2.
 * Sensitive account information is encrypted with AES-256 before being written to the database.
 * All data remains on the local machine.
+* The entire database is stored in a single SQLite file, making it easy to create backups or transfer your data to another system when needed.
 
 ## Disclaimer
 
