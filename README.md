@@ -38,8 +38,8 @@ The application supports multiple users, with all user data stored in a single S
 ### Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/<repository-name>.git
-cd <repository-name>
+git clone [https://github.com/<your-username>/<repository-name>.git
+cd <repository-name>](https://github.com/LordTech3/LORD-Account-Manager)
 ```
 
 ### Build
