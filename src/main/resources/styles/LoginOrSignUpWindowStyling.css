@@ -1,0 +1,181 @@
+/* ===== Root background ===== */
+
+.root {
+    -fx-background-color: linear-gradient(to bottom, #0f172a, #1e293b);
+    -fx-font-family: "Segoe UI", "Arial";
+}
+
+/* ===== Title ===== */
+
+#Title_Label {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-padding: 20 0 10 0;
+}
+
+/* ===== Form container ===== */
+
+#AccountDetails_GridPane {
+    -fx-background-color: #1e293b;
+    -fx-background-radius: 12;
+    -fx-padding: 30;
+    -fx-hgap: 20;
+    -fx-vgap: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 20, 0.2, 0, 4);
+}
+
+/* ===== Labels ===== */
+
+.label {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-weight: bold;
+}
+
+/* ===== Text fields ===== */
+
+.text-field,
+.password-field {
+    -fx-background-color: #334155;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: transparent;
+    -fx-padding: 8 12 8 12;
+}
+
+/* focus effect */
+
+.text-field:focused,
+.password-field:focused {
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 2;
+    -fx-background-color: #3b475f;
+}
+
+/* ===== Buttons ===== */
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #3b82f6, #2563eb);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 8 24 8 24;
+    -fx-cursor: hand;
+}
+
+/* hover */
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #60a5fa, #3b82f6);
+}
+
+/* pressed */
+
+.button:pressed {
+    -fx-background-color: #1d4ed8;
+}
+
+/* ===== Save button ===== */
+
+#Save_Btn {
+    -fx-background-color: linear-gradient(to bottom, #22c55e, #16a34a);
+}
+
+#Save_Btn:hover {
+    -fx-background-color: linear-gradient(to bottom, #4ade80, #22c55e);
+}
+
+/* ===== CheckBoxes ===== */
+
+.check-box {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 13px;
+}
+
+/* checkbox square */
+
+.check-box > .box {
+    -fx-background-color: #334155;
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 2;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+/* hover */
+
+.check-box:hover > .box {
+    -fx-border-color: #60a5fa;
+}
+
+/* selected */
+
+.check-box:selected > .box {
+    -fx-background-color: #2563eb;
+    -fx-border-color: #2563eb;
+}
+
+/* check mark */
+
+.check-box:selected > .box > .mark {
+    -fx-background-color: white;
+}
+
+/* focus effect */
+
+.check-box:focused > .box {
+    -fx-border-color: #60a5fa;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.4), 6, 0.2, 0, 0);
+}
+
+/* ===== Bottom bar spacing ===== */
+/* ===== Password Strength Progress Bar ===== */
+
+.progress-bar {
+    -fx-pref-height: 10;
+    -fx-background-radius: 6;
+}
+
+.progress-bar > .track {
+    -fx-background-color: #1e293b;
+    -fx-background-radius: 6;
+}
+
+/* very weak */
+
+.strength-very-weak > .bar {
+    -fx-background-color: #991b1b;   /* dark red */
+    -fx-background-radius: 6;
+}
+
+/* weak */
+
+.strength-weak > .bar {
+    -fx-background-color: #ef4444;   /* red */
+    -fx-background-radius: 6;
+}
+
+/* medium */
+
+.strength-medium > .bar {
+    -fx-background-color: #f59e0b;   /* orange */
+    -fx-background-radius: 6;
+}
+
+/* strong */
+
+.strength-strong > .bar {
+    -fx-background-color: #22c55e;   /* green */
+    -fx-background-radius: 6;
+}
+
+/* very strong */
+
+.strength-very-strong > .bar {
+    -fx-background-color: #3b82f6;
+    -fx-background-radius: 6;
+}
+
+HBox {
+    -fx-spacing: 10;
+}

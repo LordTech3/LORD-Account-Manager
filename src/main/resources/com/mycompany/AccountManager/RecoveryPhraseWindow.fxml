@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/13"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.mycompany.AccountManager.RecoveryPhraseWindowController" stylesheets="@/styles/RecoveryPhraseWindow.css">
+
+    <top>
+        <VBox alignment="CENTER">
+            <children>
+                <Label text="Account Recovery Phrases"
+                       styleClass="title-label"/>
+            </children>
+            <padding>
+                <Insets top="20" right="20" bottom="15" left="20"/>
+            </padding>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20"  fillWidth="true">
+
+            <children>
+
+                <HBox alignment="CENTER" spacing="10">
+                    <children>
+                        <Label text="Number of Phrases:" />
+                        <ComboBox fx:id="numberOfPhrases_ComboBox"
+                                  prefWidth="150" />
+                    </children>
+                </HBox>
+
+                <GridPane fx:id="recoveryPhrases_GridPane"
+                          hgap="20" 
+                          vgap="10"
+                          maxWidth="Infinity"
+                          VBox.vgrow="ALWAYS">
+
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+            
+
+                </GridPane>
+
+        
+
+            </children>
+
+            <padding>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </padding>
+
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+
+            <children>
+
+                <Button text="Back"
+                        onAction="#back_Btn_call"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="Clear"
+                        onAction="#clear_Btn_call"/>
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="Save"
+                        onAction="#save_Btn_call"/>
+
+            </children>
+
+            <padding>
+                <Insets top="15" right="20" bottom="20" left="20"/>
+            </padding>
+
+        </HBox>
+    </bottom>
+
+</BorderPane>
