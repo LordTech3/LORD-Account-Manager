@@ -61,4 +61,5 @@ This application is designed with local security in mind.
 
 ## Disclaimer
 
-This project was developed as a personal project to explore cryptography, and desktop application development in Java. While care has been taken to follow good security practices, it has not been professionally audited and should not be considered a replacement for established password and account managers.
+
+This app was developed as a personal project to explore cryptography and desktop application development in Java. While care has been taken to follow good security practices, this project has not been professionally audited. As with any software, undiscovered bugs or security vulnerabilities may still exist.
