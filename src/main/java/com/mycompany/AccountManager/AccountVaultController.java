@@ -21,7 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class AccountVaultController implements Initializable {
 
     @FXML
-    private TableView<AccountsOfUsers> passwordTable;
+    private TableView<AccountsOfUsers> accountTable;
     @FXML
     private TableColumn<AccountsOfUsers, String> categoryCol;
     @FXML
@@ -35,7 +35,7 @@ public class AccountVaultController implements Initializable {
     public static int userID;
 
     private String[] accountVaultTableDeletingColumns = {"AccountID"};
-    private ObservableList <AccountsOfUsers> accountsList;
+    private ObservableList<AccountsOfUsers> accountsList;
     @FXML
     private ComboBox<AccountCategories> selectAccountCategory_ComboBox;
     private ObservableList accountCategoriesList;
@@ -49,22 +49,22 @@ public class AccountVaultController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         // Disable user resizing interference
-        passwordTable.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
+        accountTable.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
 
         // Bind columns to table width (percentages)
-        categoryCol.prefWidthProperty().bind(passwordTable.widthProperty().multiply(0.20));
+        categoryCol.prefWidthProperty().bind(accountTable.widthProperty().multiply(0.20));
 
-        usernameCol.prefWidthProperty().bind(passwordTable.widthProperty().multiply(0.20));
+        usernameCol.prefWidthProperty().bind(accountTable.widthProperty().multiply(0.20));
 
-        passwordCol.prefWidthProperty().bind(passwordTable.widthProperty().multiply(0.15));
+        passwordCol.prefWidthProperty().bind(accountTable.widthProperty().multiply(0.15));
 
-        descriptionCol.prefWidthProperty().bind(passwordTable.widthProperty().multiply(0.25));
+        descriptionCol.prefWidthProperty().bind(accountTable.widthProperty().multiply(0.25));
 
-        websiteNameCol.prefWidthProperty().bind(passwordTable.widthProperty().multiply(0.20));
+        websiteNameCol.prefWidthProperty().bind(accountTable.widthProperty().multiply(0.20));
         accountsList = PassManagerDB.getAccountsOfUsers(userID);
         accountCategoriesList = PassManagerDB.getAccountCategories(userID);
         initializeSelectAccountCategoryCombo();
-        passwordTable.setItems(accountsList);
+        accountTable.setItems(accountsList);
         initializePasswordTable();
         AddOrModifyAccountController.userID = userID;
     }
@@ -76,7 +76,7 @@ public class AccountVaultController implements Initializable {
 
     @FXML
     public void EditPass_Btn(ActionEvent event) throws IOException {
-        AccountsOfUsers account = passwordTable.selectionModelProperty().get().getSelectedItem();
+        AccountsOfUsers account = accountTable.selectionModelProperty().get().getSelectedItem();
         if (account != null) {
             AddOrModifyAccountController.account = account;
             App.setRoot("AddOrModifyAccount");
@@ -89,7 +89,7 @@ public class AccountVaultController implements Initializable {
     @FXML
     private void back_Btn_call(ActionEvent event) throws IOException {
         App.setRoot("UserDashboard");
-        
+
     }
 
     private void initializePasswordTable() {
@@ -109,7 +109,7 @@ public class AccountVaultController implements Initializable {
 
     @FXML
     private void deleteAccount_Btn_call(ActionEvent event) {
-        AccountsOfUsers account = passwordTable.getSelectionModel().selectedItemProperty().get();
+        AccountsOfUsers account = accountTable.getSelectionModel().selectedItemProperty().get();
         if (account != null) {
             Optional buttonPressed = Alerts.Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to delete this account?");
             if (buttonPressed.isPresent() && buttonPressed.get() == ButtonType.OK) {
@@ -144,37 +144,32 @@ public class AccountVaultController implements Initializable {
         selectAccountCategory_ComboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldcategory, newCategory) -> {
             if (newCategory != null) {
                 accountsOfACategory.removeAll(accountsOfACategory);
-                for(AccountsOfUsers acc: accountsList){
-                      if(acc.getAccountCategory().getAccountCategoryID()== newCategory.getAccountCategoryID()){
-                          accountsOfACategory.add(acc);
-                      } 
+                for (AccountsOfUsers acc : accountsList) {
+                    if (acc.getAccountCategory().getAccountCategoryID() == newCategory.getAccountCategoryID()) {
+                        accountsOfACategory.add(acc);
+                    }
                 }
-          passwordTable.setItems(accountsOfACategory);
+                accountTable.setItems(accountsOfACategory);
             }
         });
     }
 
     @FXML
     private void reset_Btn_call(ActionEvent event) {
-        selectAccountCategory_ComboBox.setValue(null);{
-        passwordTable.setItems(accountsList);
-    }
+        selectAccountCategory_ComboBox.setValue(null);
+        {
+           accountTable.setItems(accountsList);
+        }
     }
 
     @FXML
     private void RecoveryPhrase_Btn_call(ActionEvent event) throws IOException {
-         AccountsOfUsers account = passwordTable.getSelectionModel().selectedItemProperty().get();
-        if(account != null){
+        AccountsOfUsers account = accountTable.getSelectionModel().selectedItemProperty().get();
+        if (account != null) {
             RecoveryPhraseWindowController.account = account;
             App.setRoot("RecoveryPhraseWindow");
-        }
-        else{
+        } else {
             Alerts.Alert(Alert.AlertType.ERROR, "You must select an account before adding or modifying its recovery phrases");
         }
     }
 }
-        
-    
-
-
-    
