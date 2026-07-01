@@ -1,25 +1,26 @@
-# LORD Account Manager
+# 🔐 LORD Account Manager
 
 A local desktop application for securely managing account credentials and recovery information.
 
 The application supports multiple users, with all user data stored in a single SQLite database. User passwords are hashed using Argon2, while sensitive account information is encrypted with AES-256 using encryption keys derived from the user's master password via Argon2. All data is stored locally, and the application does not rely on any cloud or external servers.
 
-## Features
+## ✨ Features
 
 * Multi-user support
 * Local SQLite database
 * Argon2 password hashing
 * Argon2-based key derivation
 * AES-256 encryption for sensitive account data
-* Stores Account details such as:
+* Stores account details such as:
+
   * Website or application names
-  * Account Usernames
+  * Account usernames
   * Passwords
   * Recovery phrases or backup codes
   * Descriptions and notes
 * Fully offline
 
-## Technologies
+## 🛠️ Technologies
 
 * Java
 * JavaFX
@@ -28,28 +29,29 @@ The application supports multiple users, with all user data stored in a single S
 * Argon2
 * AES-256
 
-## Building
+## 📦 Building
 
-### Prerequisites
+### 📋 Prerequisites
 
 * JDK 11 or later
 * Maven
 
-### Clone the repository
+### 📥 Clone the Repository
 
 ```bash
-git clone [https://github.com/<your-username>/<repository-name>.git
-cd <repository-name>](https://github.com/LordTech3/LORD-Account-Manager)
+git clone https://github.com/LordTech3/LORD-Account-Manager.git
+cd LORD-Account-Manager
 ```
 
-### Build
+### ⚙️ Build
 
 ```bash
 mvn clean package
 ```
-This creates a JAR in the `target` directory, which can be run by the JVM
 
-## Security
+This creates a JAR in the `target` directory, which can be run by the JVM.
+
+## 🛡️ Security
 
 This application is designed with local security in mind.
 
@@ -59,7 +61,6 @@ This application is designed with local security in mind.
 * All data remains on the local machine.
 * The entire database is stored in a single SQLite file, making it easy to create backups or transfer your data to another system when needed.
 
-## Disclaimer
+## ⚠️ Disclaimer
 
-
-This app was developed as a personal project to explore cryptography and desktop application development in Java. While care has been taken to follow good security practices, this project has not been professionally audited. As with any software, undiscovered bugs or security vulnerabilities may still exist.
+This application was developed as a personal project to explore cryptography and desktop application development in Java. While care has been taken to follow good security practices, it has not been professionally audited. As with any software, undiscovered bugs or security vulnerabilities may still exist.
