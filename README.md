@@ -47,7 +47,7 @@ cd <repository-name>](https://github.com/LordTech3/LORD-Account-Manager)
 ```bash
 mvn clean package
 ```
-This creates a runnable JAR in the `target` directory.
+This creates a JAR in the `target` directory, which can be run by the JVM
 
 ## Security
 
