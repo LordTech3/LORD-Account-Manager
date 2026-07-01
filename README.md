@@ -1,4 +1,4 @@
-# 🔐 LORD Account Manager
+# LORD Account Manager
 
 A local desktop application for securely managing account credentials and recovery information.
 
