@@ -12,7 +12,6 @@ The application supports multiple users, with all user data stored in a single S
 * Argon2-based key derivation
 * AES-256 encryption for sensitive account data
 * Stores account details such as:
-
   * Website or application names
   * Account usernames
   * Passwords
