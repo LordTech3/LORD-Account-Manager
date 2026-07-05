@@ -17,7 +17,7 @@
                   <Font name="Arial Bold" size="18.0" />
                </font></Button>
             <Region VBox.vgrow="ALWAYS" />
-            <Button mnemonicParsing="false" onAction="#CreateAccount_Btn_call" text="Create Account">
+            <Button mnemonicParsing="false" onAction="#CreateUser_Btn_call" text="Create User">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font></Button>

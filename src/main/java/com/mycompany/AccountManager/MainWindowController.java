@@ -26,7 +26,7 @@ public class MainWindowController implements Initializable {
     }
 
     @FXML
-    private void CreateAccount_Btn_call(ActionEvent event) throws IOException {
+    private void CreateUser_Btn_call(ActionEvent event) throws IOException {
           LoginOrSignUpWindowController.setState("SignUp");
         App.setRoot("LoginOrSignUpWindow");
     }
