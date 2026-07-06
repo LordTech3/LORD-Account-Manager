@@ -4,7 +4,8 @@ A local desktop application for securely managing account credentials and recove
 
 The application supports multiple users, with all user data stored in a single SQLite database. User passwords are hashed using Argon2, while sensitive account information is encrypted with AES-256 using encryption keys derived from the user's master password via Argon2. All data is stored locally, and the application does not rely on any cloud or external servers.
 
-## Preview
+## 📺 Preview
+
 ![preview](./preview.gif)
 
 ## ✨ Features
